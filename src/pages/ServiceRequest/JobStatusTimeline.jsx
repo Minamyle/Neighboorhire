@@ -78,7 +78,7 @@ const JobStatusTimeline = () => {
               <div className="space-y-4">
                 {job.timeline.map((event, index) => (
                   <div key={index} className="flex items-start">
-                    <div className={`flex-shrink-0 w-4 h-4 rounded-full ${getStatusColor(event.status)} mt-1`}></div>
+                    <div className={`shrink-0 w-4 h-4 rounded-full ${getStatusColor(event.status)} mt-1`}></div>
                     <div className="ml-4">
                       <p className="text-sm font-medium text-gray-900">{getStatusText(event.status)}</p>
                       <p className="text-sm text-gray-600">{event.description}</p>

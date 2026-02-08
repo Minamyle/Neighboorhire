@@ -1,8 +1,7 @@
 import React, {useState} from "react";
-import {Link, useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 const Login = () => {
-  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -18,7 +17,7 @@ const Login = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.email || !formData.password) {
       setErrors({
@@ -26,6 +25,12 @@ const Login = () => {
         password: !formData.password ? "Password is required" : "",
       });
       return;
+    }
+    setIsLoading(true);
+    try {
+      // TODO: Add API call here
+    } finally {
+      setIsLoading(false);
     }
   };
   return (
