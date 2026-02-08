@@ -1,17 +1,5 @@
 import React from "react";
-import Layout from "./layout/Layout";
-
-import "./App.css";
-
-const App = () => {
-  return (
-    <>
-      <Layout />
-    </>
-  );
-};
 import {
-  BrowserRouter as Router,
   Routes,
   Route,
   Navigate,
@@ -19,12 +7,12 @@ import {
 import Login from "./pages/Auth/Login";
 import Signup from "./pages/Auth/Signup";
 import "./App.css";
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+
 import Navigation from './components/Navigation';
 import LandingPage from './pages/LandingPage';
-import Login from './pages/Auth/Login';
-import Signup from './pages/Auth/Signup';
+
+
 import RoleSelection from './pages/Auth/RoleSelection';
 import ArtisanDiscovery from './pages/ArtisanDiscovery';
 import ProfilePage from './pages/ServiceRequest/ProfilePage';
@@ -37,20 +25,17 @@ import './App.css';
 
 function App() {
   return (
-    <Router>
-      <div className="App">
+    <div className="App">
+      <Navigation />
         <Routes>
-          <Route path="/" element={<Navigate to="/login" replace />} />
+          {/* <Route path="/" element={<Navigate to="/login" replace />} /> */}
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-        <Navigation />
-        <Routes>
+
           {/* Student 1: Landing Page & Navigation */}
           <Route path="/" element={<LandingPage />} />
 
           {/* Student 2: Authentication & Role Flow */}
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
           <Route path="/role-selection" element={<RoleSelection />} />
 
           {/* Student 3: Artisan Discovery */}
@@ -66,8 +51,7 @@ function App() {
           <Route path="/customer-dashboard" element={<CustomerDashboard />} />
           <Route path="/artisan-dashboard" element={<ArtisanDashboard />} />
         </Routes>
-      </div>
-    </Router>
+    </div>
   );
 }
 
