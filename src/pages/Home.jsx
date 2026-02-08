@@ -31,15 +31,15 @@ const featuredServices = [
     id: 2,
     image: "/images/flowers.png",
     job: "Gardening",
-    rating: "4.8 (90+ jobs)",
-    comment: "Beautiful gardens maintained with care",
+    rating: "4.8 (85 jobs)",
+    comment: "Lawn mowing, weeding and planting help.",
   },
   {
     id: 3,
     image: "/images/plumber.png",
-    job: "Plumbing",
-    rating: "4.9 (150+ jobs)",
-    comment: "Fast and reliable plumbing services",
+    job: "Handyman",
+    rating: "5.0 (200+ jobs)",
+    comment: "Quick fixes for repairs and installations.",
   },
 ];
 
