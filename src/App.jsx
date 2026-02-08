@@ -1,3 +1,13 @@
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import Login from "./pages/Auth/Login";
+import Signup from "./pages/Auth/Signup";
+import "./App.css";
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
@@ -18,6 +28,10 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <Routes>
+          <Route path="/" element={<Navigate to="/login" replace />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
         <Navigation />
         <Routes>
           {/* Student 1: Landing Page & Navigation */}
