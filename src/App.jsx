@@ -33,7 +33,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
 
           {/* Student 1: Landing Page & Navigation */}
-          <Route path="/" element={<LandingPage />} />
+          <Route path="/Home" element={<LandingPage />} />
 
           {/* Student 2: Authentication & Role Flow */}
           <Route path="/role-selection" element={<RoleSelection />} />

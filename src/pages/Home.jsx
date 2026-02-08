@@ -93,7 +93,7 @@ export default function Home() {
         <img
           src="/images/gardener.jpg"
           alt="Gardener working"
-          className="w-[600px] h-[400px] object-cover md:w-1/2 rounded md:object-contain"
+          className="w-150 h-100 object-cover md:w-1/2 rounded md:object-contain"
         />
       </section>
 
