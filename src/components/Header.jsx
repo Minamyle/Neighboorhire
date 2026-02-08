@@ -5,10 +5,11 @@ const Header = () => {
   return (
     <nav className="py-3 items-center justify-center shadow-[0_1px_3px_rgba(0,0,0,0.06)] z-50 bg-white fixed md:relative w-full">
       <div className="flex justify-between items-center px-6 md:px-20">
-        <div>
+        <div className="flex items-center ">
           <a href="#">
             <img src="/images/logoNeb.png" alt="logo" className="h-10" />
           </a>
+          <h1 className="text-2xl">NeighborHire</h1>
         </div>
         <div className="flex space-x-4 items-center">
           <Link

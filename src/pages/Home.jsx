@@ -1,6 +1,4 @@
-import React from "react";
-
-const chooseUS = [
+const chooseUs = [
   {
     id: 1,
     image: "/images/checked.png",
@@ -13,117 +11,144 @@ const chooseUS = [
     headline: "Truly Local",
     content: "Support your community by hiring neighbors right next door.",
   },
-
   {
     id: 3,
     image: "/images/tap.png",
     headline: "Simple & Easy",
-    content: "Post a task, view offer and book help in just a few click",
+    content: "Post a task, view offers and book help in just a few clicks",
   },
 ];
 
-const FeatServices = [
+const featuredServices = [
   {
     id: 1,
-    img: "/images/mop.png",
+    image: "/images/mop.png",
     job: "Home Cleaning",
-    rating: "4.9(120+ jobs)",
+    rating: "4.9 (120+ jobs)",
     comment: "Sparkling clean homes by trusted neighbors",
   },
   {
     id: 2,
-    img: "/images/flowers.png",
-    job: "Home Cleaning",
-    rating: "4.9(120+ jobs)",
-    comment: "Sparkling clean homes by trusted neighbors",
+    image: "/images/flowers.png",
+    job: "Gardening",
+    rating: "4.8 (90+ jobs)",
+    comment: "Beautiful gardens maintained with care",
   },
   {
     id: 3,
-    img: "/images/plumber.png",
-    job: "Home Cleaning",
-    rating: "4.9(120+ jobs)",
-    comment: "Sparkling clean homes by trusted neighbors",
+    image: "/images/plumber.png",
+    job: "Plumbing",
+    rating: "4.9 (150+ jobs)",
+    comment: "Fast and reliable plumbing services",
   },
 ];
 
-const Home = () => {
+const howItWorks = [
+  {
+    id: 1,
+    image: "/images/list.png",
+    headline: "Post a Task",
+    remark:
+      "Describe what you need help with, from gardening to moving, and set your budget.",
+  },
+  {
+    id: 2,
+    image: "/images/user-avatar.png",
+    headline: "Choose a Neighbor",
+    remark:
+      "Browse profiles, ratings, and reviews to pick the best person for the job.",
+  },
+  {
+    id: 3,
+    image: "/images/checked.png",
+    headline: "Get it Done",
+    remark:
+      "Relax while the task is completed, then pay securely through the platform.",
+  },
+];
+
+export default function Home() {
   return (
-    <div className="flex pt-10 flex-col items-center justify-center md:pt-0 overflow-x-hidden">
-      <section className="w-full py-14 px-6 bg-[#dc3545]">
+    <div className="flex flex-col items-center justify-center pt-10 md:pt-0 overflow-x-hidden">
+      {/* Section 1 */}
+      <section className="w-full py-14 px-6 bg-[#dc3545] flex flex-col md:flex-row items-center gap-8">
         <div>
-          <h1>
+          <h1 className="text-4xl font-bold mb-4">
             Find a helpful <br /> neighbor for <br /> any task
           </h1>
-          <p>
-            from plumbing to cleaning, connect with trusted <br /> locals ready
-            to help you get the job done efficiently <br /> and safely
+          <p className="mb-6">
+            From plumbing to cleaning, connect with trusted locals ready to help
+            you get the job done efficiently and safely.
           </p>
-          <div>
-            <button>Find a Service</button>
-            <button>Become a Helper</button>
+          <div className="flex gap-4">
+            <button className="px-6 py-2 bg-white text-black rounded">
+              Find a Service
+            </button>
+            <button className="px-6 py-2 border border-white text-white rounded">
+              Become a Helper
+            </button>
           </div>
         </div>
-        <div>
-          <img src="/images/gardener.jpg" alt="gardener" />
-        </div>
+
+        <img
+          src="/images/gardener.jpg"
+          alt="Gardener working"
+          className="w-full md:w-1/2 rounded"
+        />
       </section>
 
       {/* Section 2 */}
-      <section className="w-full py-14 px-6 bg-[#007bff]">
-        <div>
-          <p>BENEFITS</p>
-          <h2>Why Choose NeighborHire</h2>
+      <section className="w-full py-14 px-6 bg-[#007bff] text-white">
+        <p className="text-sm mb-2">BENEFITS</p>
+        <h2 className="text-3xl font-bold mb-8">Why Choose NeighborHire</h2>
 
-          <ul className="grid gap-6 md:grid-cols-3 mt-8">
-            {chooseUS.map((section, id) => {
-              return (
-                <li key={id} className="text-center md:text-left">
-                  <img src={section.image} alt="images" />
-                  <h3 className="text-2xl font-semibold mb-4">
-                    {section.headline}
-                  </h3>
-                  <p className="text-gray-600 text-base leading-relaxed">
-                    {section.content}
-                  </p>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
+        <ul className="grid gap-6 md:grid-cols-3">
+          {chooseUs.map((item) => (
+            <li key={item.id} className="text-center md:text-left">
+              <img
+                src={item.image}
+                alt={item.headline}
+                className="mx-auto md:mx-0 mb-4"
+              />
+              <h3 className="text-2xl font-semibold mb-2">{item.headline}</h3>
+              <p className="text-gray-200">{item.content}</p>
+            </li>
+          ))}
+        </ul>
       </section>
 
       {/* Section 3 */}
+      <section className="w-full py-14 px-6">
+        <h2 className="text-3xl font-bold mb-2">Featured Services</h2>
+        <p className="mb-8">Most requested help in your area</p>
 
-      <section>
-        <div>
-          <h2>Featured Services</h2>
-          <p>Most requested help in your area</p>
-          <ul className="grid gap-6 md:grid-cols-3 mt-8">
-            {FeatServices.map((sec, id) => {
-              return (
-                <li key={id} className="text-center md:text-left">
-                  <img src={sec.img} alt="images" />
-                  <h3 className="text-2xl font-semibold mb-4">{sec.job}</h3>
-                  <small>{sec.rating}</small>
-                  <p className="text-gray-600 text-base leading-relaxed">
-                    {sec.comment}
-                  </p>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
+        <ul className="grid gap-6 md:grid-cols-3">
+          {featuredServices.map((service) => (
+            <li key={service.id} className="text-center md:text-left">
+              <img src={service.image} alt={service.job} className="mb-4" />
+              <h3 className="text-2xl font-semibold">{service.job}</h3>
+              <small className="block mb-2">{service.rating}</small>
+              <p className="text-gray-600">{service.comment}</p>
+            </li>
+          ))}
+        </ul>
       </section>
 
       {/* Section 4 */}
-      <section>
-        <div>
-          <h2>How it works</h2>
-          <p>Getting help is as easy as 1-2-3</p>
-        </div>
+      <section className="w-full py-14 px-6 bg-gray-100">
+        <h2 className="text-3xl font-bold mb-2">How it works</h2>
+        <p className="mb-8">Getting help is as easy as 1-2-3</p>
+
+        <ul className="grid gap-6 md:grid-cols-3">
+          {howItWorks.map((step) => (
+            <li key={step.id} className="text-center md:text-left">
+              <img src={step.image} alt={step.headline} className="mb-4" />
+              <h3 className="text-2xl font-semibold mb-2">{step.headline}</h3>
+              <p className="text-gray-600">{step.remark}</p>
+            </li>
+          ))}
+        </ul>
       </section>
     </div>
   );
-};
-
-export default Home;
+}
