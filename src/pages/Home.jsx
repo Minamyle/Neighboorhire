@@ -125,7 +125,7 @@ export default function Home() {
       </section>
 
       {/* Section 3 */}
-      <section className="w-full py-30 px-13 md:px-50">
+      <section className="w-full py-30 px-13 bg-white md:px-50">
         <div className="flex flex-row items-center justify-between text-center md:px-40">
           <div className="">
             <h2 className="text-3xl font-bold mb-2">Featured Services</h2>
