@@ -5,7 +5,7 @@ export default function Topbar({ user, onLogout, onToggleSidebar }) {
   const firstLetter = displayName.charAt(0).toUpperCase();
 
   return (
-    <header className="flex items-center justify-between pt-4 px-6 md:justify-end">
+    <header className="flex items-center justify-between pt-4 px-6 md:justify-end ">
       {/* Mobile Toggle Button */}
       <button
         onClick={onToggleSidebar}
