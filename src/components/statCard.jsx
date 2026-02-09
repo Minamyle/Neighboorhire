@@ -41,7 +41,7 @@ export default function StatCard({
       />
 
       {/* Secondary Accent Glow */}
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-transparent via-transparent to-white/10 dark:to-white/5 pointer-events-none" />
+      <div className="absolute top-0 left-0 w-full h-full bg-linear-to-br from-transparent via-transparent to-white/10 dark:to-white/5 pointer-events-none" />
     </div>
   );
 }
