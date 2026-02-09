@@ -1,4 +1,4 @@
-import { Wallet } from "lucide-react";
+import { BriefcaseBusiness, Clock, Search, Wallet } from "lucide-react";
 
 export default function ArtisanDashboardOverview() {
   return (
@@ -30,7 +30,7 @@ export default function ArtisanDashboardOverview() {
             <h2 className="text-2xl font-extrabold text-orange-400">12</h2>
           </div>
           <span className="z-2 w-13 h-13 flex justify-center items-center bg-orange-400 rounded-full  ">
-            <Wallet size={25} className="text-orange-950 " />
+            <Clock size={25} className="text-orange-950 " />
           </span>
 
           <div className="absolute right-7 bottom-0   w-20 h-20 rounded-full bg-linear-210 from-orange-800 to-orange-500 blur-3xl animate-spin duration-300 transition-all" />
@@ -42,7 +42,7 @@ export default function ArtisanDashboardOverview() {
             <h2 className="text-2xl font-extrabold text-purple-800">17</h2>
           </div>
           <span className="z-2 w-13 h-13 flex justify-center items-center bg-purple-400 rounded-full  ">
-            <Wallet size={25} className="text-green-950 " />
+            <BriefcaseBusiness size={25} className="text-green-950 " />
           </span>
 
           <div className="absolute right-7 bottom-0   w-20 h-20 rounded-full bg-linear-210 from-purple-800 to-purple-500 blur-3xl ease-in-out animate-spin duration-400 transition-transform" />
