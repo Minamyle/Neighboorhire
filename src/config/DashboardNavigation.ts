@@ -1,96 +1,63 @@
 import {
   LayoutDashboard,
-  ClipboardList,
-  Wrench,
+  Briefcase,
   Wallet,
   Star,
-  Calendar,
   User,
-  Settings,
+  ClipboardList,
+  CreditCard,
   LogOut,
-  Search,
-  ShoppingBag,
 } from "lucide-react";
 
 export const dashboardNavigation = {
   artisan: [
     {
-      label: "Dashboard",
-      path: "/artisan",
+      label: "Overview",
+      path: "/dashboard/artisan",
       icon: LayoutDashboard,
     },
     {
       label: "Jobs",
-      path: "/artisan/jobs",
-      icon: ClipboardList,
-    },
-    {
-      label: "Services",
-      path: "/artisan/services",
-      icon: Wrench,
+      path: "/dashboard/artisan/jobs",
+      icon: Briefcase,
     },
     {
       label: "Earnings",
-      path: "/artisan/earnings",
+      path: "/dashboard/artisan/earnings",
       icon: Wallet,
     },
     {
-      label: "Reviews",
-      path: "/artisan/reviews",
+      label: "Ratings",
+      path: "/dashboard/artisan/ratings",
       icon: Star,
-    },
-    {
-      label: "Schedule",
-      path: "/artisan/schedule",
-      icon: Calendar,
-    },
-    {
-      label: "Profile",
-      path: "/artisan/profile",
-      icon: User,
-    },
-    {
-      label: "Settings",
-      path: "/artisan/settings",
-      icon: Settings,
     },
   ],
 
   customer: [
     {
-      label: "Dashboard",
-      path: "/customer",
+      label: "Overview",
+      path: "/dashboard/customer",
       icon: LayoutDashboard,
     },
     {
-      label: "Find Artisans",
-      path: "/customer/artisans",
-      icon: Search,
-    },
-    {
-      label: "My Orders",
-      path: "/customer/orders",
-      icon: ShoppingBag,
-    },
-    {
-      label: "Reviews",
-      path: "/customer/reviews",
-      icon: Star,
-    },
-    {
       label: "Profile",
-      path: "/customer/profile",
+      path: "/dashboard/customer/profile",
       icon: User,
     },
     {
-      label: "Settings",
-      path: "/customer/settings",
-      icon: Settings,
+      label: "Job History",
+      path: "/dashboard/customer/jobs",
+      icon: ClipboardList,
+    },
+    {
+      label: "Checkout",
+      path: "/dashboard/customer/checkout",
+      icon: CreditCard,
     },
   ],
 };
 
-export const logoutNavItem = {
+export const dashboardFooterNav = {
   label: "Logout",
   action: "logout",
   icon: LogOut,
