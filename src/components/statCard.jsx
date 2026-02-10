@@ -4,6 +4,7 @@ export default function StatCard({
   icon: Icon,
   color,
   glowGradient,
+  isCurrency = false, // New prop to toggle currency symbol
 }) {
   const baseColor = color.split("-")[1];
 
@@ -19,7 +20,13 @@ export default function StatCard({
         <p className="text-xs font-bold text-slate-400 dark:text-zinc-500 uppercase tracking-[0.2em]">
           {title}
         </p>
-        <h2 className={`text-4xl font-black tracking-tighter ${color}`}>
+        <h2
+          className={`text-4xl font-black tracking-tighter flex items-baseline gap-1 ${color}`}
+        >
+          {/* Conditional Currency Symbol */}
+          {isCurrency && (
+            <span className="text-xl font-bold opacity-70">GH₵</span>
+          )}
           {value}
         </h2>
       </div>

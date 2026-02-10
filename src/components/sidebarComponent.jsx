@@ -18,7 +18,7 @@ export default function DashboardSidebar({ linkData, title = "Dashboard" }) {
         {/* Dynamic Dashboard Title */}
         <div className="flex flex-col items-center">
           <span className="text-[9px] font-medium uppercase tracking-[0.3em] text-slate-400 dark:text-zinc-500">
-            NeighborHire
+            Neighbor<span className="text-blue-600">Hire</span>
           </span>
           <span className="text-[11px] font-bold text-slate-600 dark:text-zinc-300 uppercase tracking-wider">
             {title}

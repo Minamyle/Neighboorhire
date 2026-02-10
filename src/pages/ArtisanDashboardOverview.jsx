@@ -1,29 +1,10 @@
 import { BriefcaseBusiness, Clock, Wallet } from "lucide-react";
 import GlassTable from "../components/recentActivityTable";
 import StatCard from "../components/statCard";
-
-const recentActions = [
-  {
-    customer: "Ama Mensah",
-    service: "Pipe Repair",
-    status: "Completed",
-    price: 45,
-  },
-  {
-    customer: "Kofi Arhin",
-    service: "House Wiring",
-    status: "Pending",
-    price: 120,
-  },
-  {
-    customer: "John Doe",
-    service: "Roof Leak",
-    status: "Completed",
-    price: 85,
-  },
-];
+import { useData } from "../context/ArtisanContext";
 
 export default function ArtisanDashboardOverview() {
+  const { postedJobs, stats } = useData();
   return (
     <div className="space-y-8 animate-enter">
       {/* Welcome Section */}
@@ -40,29 +21,30 @@ export default function ArtisanDashboardOverview() {
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
         <StatCard
           title="Total Earnings"
-          value="$257"
+          value={stats.totalEarnings + ""}
           icon={Wallet}
           color="text-emerald-500"
           glowGradient="bg-gradient-to-br from-emerald-500 to-green-300"
+          isCurrency={true}
         />
         <StatCard
           title="Pending Jobs"
-          value="12"
+          value={stats.pendingCount + ""}
           icon={Clock}
           color="text-orange-500"
           glowGradient="bg-gradient-to-br from-orange-500 to-yellow-300"
         />
         <StatCard
-          title="Available Jobs"
-          value="17"
+          title="Completed Jobs"
+          value={stats.completedCount + ""}
           icon={BriefcaseBusiness}
-          color="text-purple-500"
-          glowGradient="bg-gradient-to-br from-purple-500 to-indigo-300"
+          color="text-blue-500"
+          glowGradient="bg-gradient-to-br from-blue-600 to-blue-300"
         />
       </div>
 
       {/* Table Section */}
-      <GlassTable title="Recent Activity" data={recentActions} />
+      <GlassTable title="Recent Activity" data={postedJobs} />
     </div>
   );
 }
