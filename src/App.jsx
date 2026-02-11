@@ -15,6 +15,7 @@ import CustomerProfile from "./pages/CustomerProfile";
 import JobHistory from "./pages/CustomerJobHistory";
 import Checkout from "./pages/checkout";
 import NotFoundPage from "./pages/PageNotFound";
+import { ArtisanProvider } from "./context/ArtisanContext";
 
 export default function App() {
   return (
@@ -29,14 +30,21 @@ export default function App() {
         </Route>
 
         {/* Artisan Dashboard */}
-        <Route path="/dashboard/artisan" element={<ArtisanDashboard />}>
+        <Route
+          path="/dashboard/artisan"
+          element={
+            <ArtisanProvider>
+              <ArtisanDashboard />{" "}
+            </ArtisanProvider>
+          }
+        >
           <Route index element={<ArtisanDashboardOverview />} />
           <Route path="jobs" element={<ArtisanJobs />} />
           <Route path="earnings" element={<Earnings />} />
           <Route path="ratings" element={<Ratings />} />
         </Route>
 
-        {/*Ccustomer Dashboard  */}
+        {/*Customer Dashboard  */}
         <Route path="/dashboard/customer" element={<CustomerDashboard />}>
           <Route index element={<CustomerDashboardOverview />} />
           <Route path="profile" element={<CustomerProfile />} />
