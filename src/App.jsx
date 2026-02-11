@@ -1,58 +1,52 @@
-import React from "react";
-import {
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
-import Login from "./pages/Auth/Login";
-import Signup from "./pages/Auth/Signup";
-import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import IndexPageLayout from "./layouts/IndexPageLayout";
+import LandingPage from "./pages/LandingPage";
+import ArtisanDiscovery from "./pages/ArtisanDiscovery";
+import Login from "./auth/login";
+import Register from "./auth/register";
+import ArtisanDashboard from "./dashboard/Artisan-Dashboard";
+import ArtisanJobs from "./pages/ArtisanJobs";
+import ArtisanDashboardOverview from "./pages/ArtisanDashboardOverview";
+import Earnings from "./pages/Earnings";
+import Ratings from "./pages/Ratings";
+import CustomerDashboard from "./dashboard/Customer-Dashboard";
+import CustomerDashboardOverview from "./pages/CustomerDashboardOverview";
+import CustomerProfile from "./pages/CustomerProfile";
+import JobHistory from "./pages/CustomerJobHistory";
+import Checkout from "./pages/checkout";
+import NotFoundPage from "./pages/PageNotFound";
 
-
-import Navigation from './components/Navigation';
-import LandingPage from './pages/LandingPage';
-
-
-import RoleSelection from './pages/Auth/RoleSelection';
-import ArtisanDiscovery from './pages/ArtisanDiscovery';
-import ProfilePage from './pages/ServiceRequest/ProfilePage';
-import RequestModal from './pages/ServiceRequest/RequestModal';
-import JobStatusTimeline from './pages/ServiceRequest/JobStatusTimeline';
-import Checkout from './pages/Payment/Checkout';
-import CustomerDashboard from './pages/Payment/CustomerDashboard';
-import ArtisanDashboard from './pages/Payment/ArtisanDashboard';
-import './App.css';
-
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <Navigation />
-        <Routes>
-          {/* <Route path="/" element={<Navigate to="/login" replace />} /> */}
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-
-          {/* Student 1: Landing Page & Navigation */}
-          <Route path="/Home" element={<LandingPage />} />
-
-          {/* Student 2: Authentication & Role Flow */}
-          <Route path="/role-selection" element={<RoleSelection />} />
-
-          {/* Student 3: Artisan Discovery */}
+    <BrowserRouter>
+      <Routes>
+        {/* Public */}
+        <Route path="/" element={<IndexPageLayout />}>
+          <Route index element={<LandingPage />} />
           <Route path="/artisans" element={<ArtisanDiscovery />} />
+          <Route path="/auth/login" element={<Login />} />
+          <Route path="/auth/register" element={<Register />} />
+        </Route>
 
-          {/* Student 4: Service Request & Job Flow */}
-          <Route path="/profile" element={<ProfilePage />} />
-          <Route path="/request-modal" element={<RequestModal isOpen={true} onClose={() => {}} artisan={{ name: 'Test Artisan' }} />} />
-          <Route path="/jobs" element={<JobStatusTimeline />} />
+        {/* Artisan Dashboard */}
+        <Route path="/dashboard/artisan" element={<ArtisanDashboard />}>
+          <Route index element={<ArtisanDashboardOverview />} />
+          <Route path="jobs" element={<ArtisanJobs />} />
+          <Route path="earnings" element={<Earnings />} />
+          <Route path="ratings" element={<Ratings />} />
+        </Route>
 
-          {/* Student 5: Payment & Dashboards */}
-          <Route path="/checkout" element={<Checkout />} />
-          <Route path="/customer-dashboard" element={<CustomerDashboard />} />
-          <Route path="/artisan-dashboard" element={<ArtisanDashboard />} />
-        </Routes>
-    </div>
+        {/*Ccustomer Dashboard  */}
+        <Route path="/dashboard/customer" element={<CustomerDashboard />}>
+          <Route index element={<CustomerDashboardOverview />} />
+          <Route path="profile" element={<CustomerProfile />} />
+          <Route path="jobs" element={<JobHistory />} />
+          <Route path="checkout" element={<Checkout />} />
+        </Route>
+
+        {/* The 404 Route MUST be last */}
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;
