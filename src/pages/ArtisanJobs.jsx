@@ -1,24 +1,36 @@
 import React, { useState } from "react";
 import JobCard from "../components/artisanJobCard";
-import { useData } from "../context/ArtisanContext";
+import { useAuth } from "../context/AuthContext";
+import { useJobs } from "../context/JobsContext";
+
+// Define the tabs outside the component
+const tabs = [
+  { id: "available", label: "Marketplace" }, // New jobs with no artisan yet
+  { id: "accepted", label: "Accepted" },
+  { id: "in-progress", label: "In Progress" },
+  { id: "completed", label: "Completed" },
+];
 
 export default function ArtisanJobs() {
-  const [activeTab, setActiveTab] = useState("pending");
-  const { postedJobs } = useData();
+  const [activeTab, setActiveTab] = useState("available"); // Default to finding work
+  const { user } = useAuth();
+  const { jobs } = useJobs();
 
-  const filteredJobs = postedJobs.filter((job) => job.status === activeTab);
+  if (!user) return null;
 
-  const tabs = [
-    { id: "pending", label: "Newly Jobs" },
-    { id: "in-progress", label: "In Progress" },
-    { id: "completed", label: "Completed" },
-  ];
+  // Filter logic:
+  // 1. If tab is 'available', show jobs with no artisanId
+  // 2. Otherwise, show jobs assigned to this specific artisan that match the status
+  const filteredJobs = jobs.filter((job) => {
+    if (activeTab === "available") {
+      return job.status === "pending" && !job.artisanId;
+    }
+    return job.artisanId === user.id && job.status === activeTab;
+  });
 
   return (
     <div className="h-screen flex flex-col bg-slate-50 dark:bg-[#0a0a0a] transition-colors duration-500">
-      {/* Container: Changed from max-w-7xl to max-w-[1600px] to occupy more screen */}
       <div className="max-w-[1600px] mx-auto w-full px-3 md:px-6 flex flex-col h-full overflow-hidden">
-        {/* Header: Reduced vertical padding */}
         <header className="flex-shrink-0 py-6 md:py-8">
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
             <div className="space-y-0.5">
@@ -29,7 +41,7 @@ export default function ArtisanJobs() {
                 </span>
               </h1>
               <p className="text-slate-500 dark:text-zinc-500 text-[10px] font-bold uppercase tracking-[0.2em]">
-                {postedJobs.length} Operations Registered
+                {filteredJobs.length} Operations Found
               </p>
             </div>
 
@@ -51,7 +63,6 @@ export default function ArtisanJobs() {
           </div>
         </header>
 
-        {/* Main Grid: Reduced gap from 8 to 4/6 to fit more cards */}
         <main className="flex-1 overflow-y-auto no-scrollbar pb-6">
           {filteredJobs.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-5">
