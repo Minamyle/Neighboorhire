@@ -36,9 +36,9 @@ export default function ArtisanJobs() {
 
   return (
     <div className="h-screen flex flex-col bg-slate-50 dark:bg-[#0a0a0a] transition-colors duration-500">
-      <div className="max-w-[1600px] mx-auto w-full px-3 md:px-6 flex flex-col h-full overflow-hidden">
+      <div className="max-w-400 mx-auto w-full px-3 md:px-6 flex flex-col h-full overflow-hidden">
         {/* --- Header & Tab Navigation --- */}
-        <header className="flex-shrink-0 py-6 md:py-8">
+        <header className="shrink-0 py-6 md:py-8">
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
             <div className="space-y-0.5">
               <h1 className="text-2xl md:text-3xl font-black text-blue-600 dark:text-blue-500 tracking-tighter uppercase italic">

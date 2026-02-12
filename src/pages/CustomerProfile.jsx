@@ -38,7 +38,7 @@ export default function CustomerProfile() {
           <div className="flex flex-col md:flex-row items-center gap-8 relative z-10">
             {/* Letter Avatar */}
             <div
-              className={`h-32 w-32 rounded-3xl bg-gradient-to-br ${avatarColor} flex items-center justify-center text-white text-5xl font-black shadow-2xl border-4 border-white dark:border-slate-700`}
+              className={`h-32 w-32 rounded-3xl bg-linear-to-br ${avatarColor} flex items-center justify-center text-white text-5xl font-black shadow-2xl border-4 border-white dark:border-slate-700`}
             >
               {user?.name?.charAt(0).toUpperCase()}
             </div>
@@ -74,7 +74,7 @@ export default function CustomerProfile() {
         {/* --- Account Details Grid --- */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Contact Information */}
-          <div className="bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl border border-white/20 dark:border-slate-700/50 rounded-[2rem] p-6 space-y-6">
+          <div className="bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl border border-white/20 dark:border-slate-700/50 rounded-4xl p-6 space-y-6">
             <h3 className="text-lg font-bold text-slate-900 dark:text-white border-b border-slate-100 dark:border-slate-700/50 pb-3 flex items-center gap-2">
               <Phone size={18} className="text-blue-500" /> Contact Info
             </h3>
@@ -110,7 +110,7 @@ export default function CustomerProfile() {
           </div>
 
           {/* Location Details */}
-          <div className="bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl border border-white/20 dark:border-slate-700/50 rounded-[2rem] p-6 space-y-6">
+          <div className="bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl border border-white/20 dark:border-slate-700/50 rounded-4xl p-6 space-y-6">
             <h3 className="text-lg font-bold text-slate-900 dark:text-white border-b border-slate-100 dark:border-slate-700/50 pb-3 flex items-center gap-2">
               <MapPin size={18} className="text-blue-500" /> Service Location
             </h3>
@@ -162,7 +162,7 @@ export default function CustomerProfile() {
         </div>
 
         {/* --- Activity Summary --- */}
-        <div className="mt-8 p-8 rounded-[2rem] bg-gradient-to-br from-blue-600 to-indigo-700 text-white flex justify-around items-center shadow-2xl shadow-blue-900/20">
+        <div className="mt-8 p-8 rounded-4xl bg-linear-to-br from-blue-600 to-indigo-700 text-white flex justify-around items-center shadow-2xl shadow-blue-900/20">
           <div className="text-center">
             <p className="text-3xl font-black">{user?.totalJobsPosted || 0}</p>
             <p className="text-blue-100 text-[10px] font-bold uppercase tracking-widest">

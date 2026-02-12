@@ -102,7 +102,7 @@ export default function JobHistory() {
               className="group relative overflow-hidden rounded-[2.5rem] bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-6 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl dark:hover:shadow-blue-900/20"
             >
               {/* Glow Layer */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(circle_at_var(--x)_var(--y),_rgba(37,99,235,0.12)_0%,_transparent_45%)] pointer-events-none" />
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(circle_at_var(--x)_var(--y),rgba(37,99,235,0.12)_0%,transparent_45%)]] pointer-events-none" />
 
               <div className="relative z-10">
                 {/* Top Bar: Letter Avatar & Badges */}
@@ -110,7 +110,7 @@ export default function JobHistory() {
                   <div className="relative">
                     {/* Letter Avatar Implementation */}
                     <div
-                      className={`h-16 w-16 rounded-2xl bg-gradient-to-br ${getAvatarGradient(artisan.name)} flex items-center justify-center text-white text-2xl font-black shadow-lg border-2 border-white dark:border-slate-700`}
+                      className={`h-16 w-16 rounded-2xl bg-linear-to-br ${getAvatarGradient(artisan.name)} flex items-center justify-center text-white text-2xl font-black shadow-lg border-2 border-white dark:border-slate-700`}
                     >
                       {artisan.name.charAt(0).toUpperCase()}
                     </div>
@@ -190,7 +190,7 @@ export default function JobHistory() {
         </div>
 
         {/* --- Footer Banner --- */}
-        <footer className="mt-16 p-8 rounded-[2.5rem] bg-gradient-to-r from-blue-600 to-indigo-700 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl shadow-blue-900/20">
+        <footer className="mt-16 p-8 rounded-[2.5rem] bg-linear-to-r from-blue-600 to-indigo-700 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl shadow-blue-900/20">
           <div className="flex items-center gap-4 text-center md:text-left">
             <div className="h-12 w-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center">
               <UserCheck size={24} />

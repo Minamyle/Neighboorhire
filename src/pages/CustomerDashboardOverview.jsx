@@ -141,7 +141,7 @@ export default function CustomerDashboardOverview() {
           </div>
 
           {/* Quick Support / Feedback Card */}
-          <div className="bg-gradient-to-br from-indigo-600 to-blue-700 rounded-[2.5rem] p-8 text-white flex flex-col justify-between shadow-2xl shadow-blue-900/20">
+          <div className="bg-linear-to-br from-indigo-600 to-blue-700 rounded-[2.5rem] p-8 text-white flex flex-col justify-between shadow-2xl shadow-blue-900/20">
             <div>
               <h3 className="text-2xl font-black mb-4">FixIt Premium</h3>
               <p className="text-blue-100 leading-relaxed font-medium">
