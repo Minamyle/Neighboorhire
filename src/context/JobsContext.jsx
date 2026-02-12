@@ -13,7 +13,11 @@ export function JobsProvider({ children }) {
     localStorage.setItem("jobs", JSON.stringify(jobs));
   }, [jobs]);
 
-  // Standard status update
+  // --- NEW: Create Job Function ---
+  const createJob = (newJob) => {
+    setJobs((prevJobs) => [newJob, ...prevJobs]); // Adds new job to the top of the list
+  };
+
   const updateJobStatus = (jobId, newStatus) => {
     setJobs((prevJobs) =>
       prevJobs.map((job) =>
@@ -22,7 +26,6 @@ export function JobsProvider({ children }) {
     );
   };
 
-  // SIMPLE FIX: Assigns artisan ID and sets status to 'accepted'
   const acceptJob = (jobId, artisanId) => {
     setJobs((prevJobs) =>
       prevJobs.map((job) =>
@@ -33,11 +36,30 @@ export function JobsProvider({ children }) {
     );
   };
 
+  // Optional: Remove a job if a customer cancels
+  const deleteJob = (jobId) => {
+    setJobs((prevJobs) => prevJobs.filter((job) => job.id !== jobId));
+  };
+
   return (
-    <JobsContext.Provider value={{ jobs, updateJobStatus, acceptJob }}>
+    <JobsContext.Provider
+      value={{
+        jobs,
+        createJob,
+        updateJobStatus,
+        acceptJob,
+        deleteJob,
+      }}
+    >
       {children}
     </JobsContext.Provider>
   );
 }
 
-export const useJobs = () => useContext(JobsContext);
+export const useJobs = () => {
+  const context = useContext(JobsContext);
+  if (!context) {
+    throw new Error("useJobs must be used within a JobsProvider");
+  }
+  return context;
+};

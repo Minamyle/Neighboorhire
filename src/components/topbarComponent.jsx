@@ -1,6 +1,8 @@
 import { LogOut, Menu } from "lucide-react";
+import { useAuth } from "../context/AuthContext";
 
-export default function Topbar({ user, onLogout, onToggleSidebar }) {
+export default function Topbar({ onLogout, onToggleSidebar }) {
+  const { user } = useAuth();
   const displayName = user?.name?.split(" ")[0] || "Guest";
   const firstLetter = displayName.charAt(0).toUpperCase();
 
