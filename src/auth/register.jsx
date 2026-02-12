@@ -1,3 +1,5 @@
+import AuthPage from "./AuthPage";
+
 export default function Register() {
-  return <div>Register here</div>;
+  return <AuthPage initialMode="register" />;
 }
