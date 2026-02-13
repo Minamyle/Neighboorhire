@@ -1,6 +1,8 @@
 import { LogOut, Menu } from "lucide-react";
+import { useAuth } from "../context/AuthContext";
 
-export default function Topbar({ user, onLogout, onToggleSidebar }) {
+export default function Topbar({ onLogout, onToggleSidebar }) {
+  const { user } = useAuth();
   const displayName = user?.name?.split(" ")[0] || "Guest";
   const firstLetter = displayName.charAt(0).toUpperCase();
 
@@ -25,7 +27,7 @@ export default function Topbar({ user, onLogout, onToggleSidebar }) {
           <div className="relative">
             <div
               className="flex items-center justify-center w-7 h-7 rounded-full 
-                            bg-gradient-to-br from-blue-500 to-blue-600 
+                            bg-linear-to-br from-blue-500 to-blue-600 
                             text-white text-[10px] font-bold shadow-sm"
             >
               {user?.image ? (
@@ -51,7 +53,7 @@ export default function Topbar({ user, onLogout, onToggleSidebar }) {
           </div>
         </div>
 
-        <div className="h-4 w-[1px] bg-slate-200 dark:bg-zinc-800" />
+        <div className="h-4 w-px bg-slate-200 dark:bg-zinc-800" />
 
         <button
           onClick={onLogout}
