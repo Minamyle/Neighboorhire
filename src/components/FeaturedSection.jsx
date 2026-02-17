@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const FeaturedSection = () => {
+  const navigate = useNavigate();
   return (
     <div className="w-full bg-gray-100 px-6 md:px-12 lg:px-60 py-16">
       {/* Header */}
@@ -12,7 +14,10 @@ const FeaturedSection = () => {
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <p className="text-gray-600">Most requested help in your area</p>
 
-          <button className="self-center sm:self-auto flex items-center gap-2 underline font-medium hover:text-[#007bff] transition">
+          <button
+            className="self-center sm:self-auto flex items-center gap-2 underline font-medium hover:text-[#007bff] transition"
+            onClick={() => navigate("/services")}
+          >
             View all services
             <img src="/images/right-arrow.png" alt="arrow" className="w-3" />
           </button>
@@ -22,7 +27,10 @@ const FeaturedSection = () => {
       {/* Cards */}
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {/* Card 1 */}
-        <div className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition">
+        <div
+          className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition"
+          onClick={() => navigate("/auth/login")}
+        >
           <div className="flex items-center justify-center h-24 rounded-xl bg-[#7bb1eb] mb-4">
             <img src="/images/mop.png" alt="mop" className="w-12" />
           </div>
@@ -36,7 +44,10 @@ const FeaturedSection = () => {
         </div>
 
         {/* Card 2 */}
-        <div className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition">
+        <div
+          className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition"
+          onClick={() => navigate("/auth/login")}
+        >
           <div className="flex items-center justify-center h-24 rounded-xl bg-green-200 mb-4">
             <img src="/images/flowers.png" alt="flower" className="w-12" />
           </div>
@@ -50,7 +61,10 @@ const FeaturedSection = () => {
         </div>
 
         {/* Card 3 */}
-        <div className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition">
+        <div
+          className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition"
+          onClick={() => navigate("/auth/login")}
+        >
           <div className="flex items-center justify-center h-24 rounded-xl bg-yellow-200 mb-4">
             <img src="/images/plumber.png" alt="plumber" className="w-12" />
           </div>

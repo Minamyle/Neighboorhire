@@ -6,7 +6,7 @@ const mainNavigation = [
   { label: "Home", path: "/" },
   { label: "Find Artisans", path: "/artisans" },
   { label: "How It Works", path: "#how-it-works" },
-  { label: "Services", path: "#services" },
+  { label: "Services", path: "/services" },
   { label: "Get Started", path: "/auth/register", variant: "button" },
 ];
 

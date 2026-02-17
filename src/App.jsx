@@ -16,6 +16,7 @@ import JobHistory from "./pages/CustomerJobHistory";
 import Checkout from "./pages/checkout";
 import NotFoundPage from "./pages/PageNotFound";
 import { ArtisanProvider } from "./context/ArtisanContext";
+import Services from "./pages/Services";
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
         <Route path="/" element={<IndexPageLayout />}>
           <Route index element={<LandingPage />} />
           <Route path="/artisans" element={<ArtisanDiscovery />} />
+          <Route path="/services" element={<Services />} />
           <Route path="/auth/login" element={<Login />} />
           <Route path="/auth/register" element={<Register />} />
         </Route>
