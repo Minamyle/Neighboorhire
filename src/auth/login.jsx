@@ -1,3 +1,5 @@
+import AuthPage from "./AuthPage";
+
 export default function Login() {
-  return <div>Login here</div>;
+  return <AuthPage initialMode="login" />;
 }
