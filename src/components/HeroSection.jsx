@@ -2,14 +2,14 @@ import React from "react";
 
 const HeroSection = () => {
   return (
-    <div className="w-full  bg-white px-8 md:px-12 lg:px-24 py-12">
+    <div className="w-full  bg-white px-8 md:px-12 lg:px-24 py-12 2xl:px-40">
       <div className="flex flex-col-reverse lg:flex-row items-center justify-around gap-5">
         {/* Left Content */}
         <div className="w-full lg:w-1/2 text-center lg:text-left">
-          <h1 className="text-3xl text-[#007bff] sm:text-4xl lg:text-5xl  font-extrabold leading-tight mb-6">
+          <h1 className="text-3xl text-[#007bff] sm:text-4xl lg:text-6xl  font-extrabold leading-tight mb-6">
             Find a Helpful <br className="hidden sm:block" />
             neighbor <br className="hidden lg:block xl:hidden" />
-            for <br className="hidden " /> any task
+            for <br className="hidden xl:block " /> any task
           </h1>
 
           <p className="text-gray-600 mb-6 text-base sm:text-lg">

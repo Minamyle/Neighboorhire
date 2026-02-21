@@ -2,7 +2,7 @@ import React from "react";
 
 const BenefitSection = () => {
   return (
-    <div className="w-full bg-white px-6 md:px-12 lg:px-24 py-16">
+    <div className="w-full bg-white px-6 md:px-12 lg:px-24 py-16 2xl:px-40">
       {/* Heading */}
       <div className="flex flex-col items-center text-center mb-14">
         <h3 className="bg-[#ffb012] px-3 py-1 font-semibold rounded-lg mb-4 text-sm">
