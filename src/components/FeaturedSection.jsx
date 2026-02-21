@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 const FeaturedSection = () => {
   const navigate = useNavigate();
   return (
-    <div className="w-full bg-gray-100 px-6 md:px-12 lg:px-60 py-16">
+    <div className="w-full bg-gray-100 px-6 md:px-12 lg:px-24 py-16">
       {/* Header */}
       <div className="mb-12 text-center lg:text-left ">
         <h2 className="text-2xl sm:text-3xl font-bold text-[#007bff] mb-3">

@@ -2,19 +2,20 @@ import React from "react";
 
 const HeroSection = () => {
   return (
-    <div className="w-full  bg-white px-8 md:px-12 lg:px-60 py-12">
+    <div className="w-full  bg-white px-8 md:px-12 lg:px-24 py-12">
       <div className="flex flex-col-reverse lg:flex-row items-center justify-around gap-5">
         {/* Left Content */}
         <div className="w-full lg:w-1/2 text-center lg:text-left">
-          <h1 className="text-3xl text-[#007bff] sm:text-4xl lg:text-7xl  font-extrabold leading-tight mb-6">
+          <h1 className="text-3xl text-[#007bff] sm:text-4xl lg:text-5xl  font-extrabold leading-tight mb-6">
             Find a Helpful <br className="hidden sm:block" />
-            neighbor for <br className="hidden lg:block" /> any task
+            neighbor <br className="hidden lg:block xl:hidden" />
+            for <br className="hidden " /> any task
           </h1>
 
           <p className="text-gray-600 mb-6 text-base sm:text-lg">
             From plumbing to cleaning, connect with trusted
             <br className="hidden lg:block" /> locals ready to help you get the
-            job done efficiently <br className="hidden lg:block" />
+            job done efficiently <br className="hidden " />
             and safely.
           </p>
 

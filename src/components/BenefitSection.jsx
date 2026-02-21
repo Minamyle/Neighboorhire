@@ -2,7 +2,7 @@ import React from "react";
 
 const BenefitSection = () => {
   return (
-    <div className="w-full bg-white px-6 md:px-12 lg:px-60 py-16">
+    <div className="w-full bg-white px-6 md:px-12 lg:px-24 py-16">
       {/* Heading */}
       <div className="flex flex-col items-center text-center mb-14">
         <h3 className="bg-[#ffb012] px-3 py-1 font-semibold rounded-lg mb-4 text-sm">
@@ -23,7 +23,8 @@ const BenefitSection = () => {
             Trusted & Vetted
           </h3>
           <p className="text-gray-600">
-            Every helper goes through a strict <br /> background check.
+            Every helper goes through a strict
+            <br className="block lg:hidden" /> background check.
           </p>
         </div>
 
@@ -38,7 +39,8 @@ const BenefitSection = () => {
             Truly Local
           </h3>
           <p className="text-gray-600">
-            Support your community by hiring <br /> neighbors right next door.
+            Support your community by hiring <br className="block lg:hidden" />{" "}
+            neighbors right next door.
           </p>
         </div>
 
@@ -49,7 +51,8 @@ const BenefitSection = () => {
             Simple & Easy
           </h3>
           <p className="text-gray-600">
-            Post a task, view offers, and book <br /> help in just a few clicks.
+            Post a task, view offers, and book
+            <br className="block lg:hidden" /> help in just a few clicks.
           </p>
         </div>
       </div>
