@@ -21,7 +21,7 @@ import JobHistory from "./pages/CustomerJobHistory";
 import Checkout from "./pages/checkout";
 
 import NotFoundPage from "./pages/PageNotFound";
-import { ArtisanProvider } from "./context/ArtisanContext";
+// import { ArtisanProvider } from "./context/ArtisanContext";
 import Services from "./pages/Services";
 
 export default function App() {
