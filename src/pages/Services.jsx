@@ -6,7 +6,7 @@ const Services = () => {
     {
       img: "/images/capentry.jpg",
       heading: "Wood and Furniture Repair",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      description: "Professional furniture solutions for homes and offices.",
       button: "View Services",
     },
     {
@@ -22,9 +22,9 @@ const Services = () => {
       button: "View Services",
     },
     {
-      img: "/images/capentry.jpg",
-      heading: "Wood and Furniture Repair",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      img: "/images/cobbler-1.jpg",
+      heading: "Shoes making and Repair",
+      description: "Professional shoe making solution at it best.",
       button: "View Services",
     },
     {
@@ -34,9 +34,9 @@ const Services = () => {
       button: "View Services",
     },
     {
-      img: "/images/electrical.jpg",
-      heading: "Electrical Repairs",
-      description: "Safe and reliable electrical repair services.",
+      img: "/images/images.jpg",
+      heading: "Autos Repairs",
+      description: "Safe and reliable motor repair services.",
       button: "View Services",
     },
   ];

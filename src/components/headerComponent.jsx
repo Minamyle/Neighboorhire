@@ -5,7 +5,7 @@ import { Menu, X, ArrowRight } from "lucide-react";
 const mainNavigation = [
   { label: "Home", path: "/" },
   { label: "Find Artisans", path: "/artisans" },
-  { label: "How It Works", path: "#how-it-works" },
+  { label: "How It Works", path: "/howitworks" },
   { label: "Services", path: "/services" },
   { label: "Get Started", path: "/auth/register", variant: "button" },
 ];
