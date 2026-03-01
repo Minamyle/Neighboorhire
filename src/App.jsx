@@ -23,6 +23,7 @@ import Checkout from "./pages/checkout";
 import NotFoundPage from "./pages/PageNotFound";
 // import { ArtisanProvider } from "./context/ArtisanContext";
 import Services from "./pages/Services";
+import Howitworks from "./pages/Howitworks";
 
 export default function App() {
   return (

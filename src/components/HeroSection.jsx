@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const HeroSection = () => {
+  const navigate = useNavigate();
   return (
     <div className="w-full  bg-white px-8 md:px-12 lg:px-24 py-12 2xl:px-40">
       <div className="flex flex-col-reverse lg:flex-row items-center justify-around gap-5">
@@ -20,7 +22,10 @@ const HeroSection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <button className="bg-[#dc3545] text-white px-6 py-3 rounded-lg hover:opacity-90 transition">
+            <button
+              className="bg-[#dc3545] text-white px-6 py-3 rounded-lg hover:opacity-90 transition"
+              onClick={() => navigate("/services")}
+            >
               Find a Service
             </button>
 
@@ -35,7 +40,7 @@ const HeroSection = () => {
           <img
             src="/images/gardener.jpg"
             alt="gardener"
-            className="w-full max-w-sm sm:max-w-md lg:max-w-lg  xl:max-w-2xl h-auto object-contain"
+            className="w-full max-w-sm sm:max-w-md lg:max-w-lg  xl:max-w-2xl  2xl:max-w-3xl h-auto object-contain"
           />
         </div>
       </div>
