@@ -4,7 +4,7 @@ export default function DashboardSidebar({ linkData, title = "Dashboard" }) {
   return (
     <aside className="h-full px-4 py-8 flex flex-col space-y-8 bg-transparent">
       {/* Branding Section */}
-      <div className="flex flex-col items-center gap-2 group cursor-default">
+      <div className="flex  items-center gap-2 group cursor-default">
         <div className="relative">
           <img
             src="/images/logoNeb.png"
@@ -16,7 +16,7 @@ export default function DashboardSidebar({ linkData, title = "Dashboard" }) {
         </div>
 
         {/* Dynamic Dashboard Title */}
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-start">
           <span className="text-[9px] font-medium uppercase tracking-[0.3em] text-slate-400 dark:text-zinc-500">
             Neighbor<span className="text-blue-600">Hire</span>
           </span>

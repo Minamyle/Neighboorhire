@@ -5,12 +5,6 @@ import DashboardSidebar from "../components/sidebarComponent";
 import Topbar from "../components/topbarComponent";
 import { dashboardNavigation } from "../config/DashboardNavigation";
 
-const currentUser = {
-  name: "Samuel Mensah",
-  role: "Lead Artisan",
-  image: null,
-};
-
 export default function ArtisanDashboard() {
   const { artisan } = dashboardNavigation;
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -57,13 +51,12 @@ export default function ArtisanDashboard() {
       <main className="flex-1 flex flex-col min-h-screen min-w-0">
         <header className="w-auto">
           <Topbar
-            user={currentUser}
             onLogout={handleLogout}
             onToggleSidebar={() => setIsMobileMenuOpen(true)}
           />
         </header>
 
-        <div className="p-6 md:p-10 animate-enter flex-1">
+        <div className="p-6 md:p-10 animate-enter flex-1 overflow-y-auto">
           <Outlet />
         </div>
       </main>
