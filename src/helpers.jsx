@@ -1,3 +1,61 @@
+// ── Constants ──────────────────────────────────────────────────────────────────
+const MONTH_NAMES = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
+
+const CATEGORY_COLORS = [
+  {
+    bg: "bg-violet-100 dark:bg-violet-500/15",
+    text: "text-violet-700 dark:text-violet-400",
+    bar: "#8b5cf6",
+  },
+  {
+    bg: "bg-blue-100 dark:bg-blue-500/15",
+    text: "text-blue-700 dark:text-blue-400",
+    bar: "#3b82f6",
+  },
+  {
+    bg: "bg-emerald-100 dark:bg-emerald-500/15",
+    text: "text-emerald-700 dark:text-emerald-400",
+    bar: "#10b981",
+  },
+  {
+    bg: "bg-amber-100 dark:bg-amber-500/15",
+    text: "text-amber-700 dark:text-amber-400",
+    bar: "#f59e0b",
+  },
+  {
+    bg: "bg-rose-100 dark:bg-rose-500/15",
+    text: "text-rose-700 dark:text-rose-400",
+    bar: "#f43f5e",
+  },
+  {
+    bg: "bg-sky-100 dark:bg-sky-500/15",
+    text: "text-sky-700 dark:text-sky-400",
+    bar: "#0ea5e9",
+  },
+];
+
+// ── Avatar ─────────────────────────────────────────────────────────────────────
+const AVATAR_COLORS = [
+  "from-violet-500 to-indigo-400",
+  "from-emerald-500 to-teal-400",
+  "from-rose-500 to-pink-400",
+  "from-amber-500 to-yellow-400",
+  "from-sky-500 to-cyan-400",
+];
+
 function buildMonthlyData(jobs) {
   const now = new Date();
   return Array.from({ length: 6 }, (_, i) => {
@@ -62,63 +120,6 @@ function CustomTooltip({ active, payload, label }) {
   );
 }
 
-// ── Avatar ─────────────────────────────────────────────────────────────────────
-const AVATAR_COLORS = [
-  "from-violet-500 to-indigo-400",
-  "from-emerald-500 to-teal-400",
-  "from-rose-500 to-pink-400",
-  "from-amber-500 to-yellow-400",
-  "from-sky-500 to-cyan-400",
-];
-
-// ── Constants ──────────────────────────────────────────────────────────────────
-const MONTH_NAMES = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec",
-];
-
-const CATEGORY_COLORS = [
-  {
-    bg: "bg-violet-100 dark:bg-violet-500/15",
-    text: "text-violet-700 dark:text-violet-400",
-    bar: "#8b5cf6",
-  },
-  {
-    bg: "bg-blue-100 dark:bg-blue-500/15",
-    text: "text-blue-700 dark:text-blue-400",
-    bar: "#3b82f6",
-  },
-  {
-    bg: "bg-emerald-100 dark:bg-emerald-500/15",
-    text: "text-emerald-700 dark:text-emerald-400",
-    bar: "#10b981",
-  },
-  {
-    bg: "bg-amber-100 dark:bg-amber-500/15",
-    text: "text-amber-700 dark:text-amber-400",
-    bar: "#f59e0b",
-  },
-  {
-    bg: "bg-rose-100 dark:bg-rose-500/15",
-    text: "text-rose-700 dark:text-rose-400",
-    bar: "#f43f5e",
-  },
-  {
-    bg: "bg-sky-100 dark:bg-sky-500/15",
-    text: "text-sky-700 dark:text-sky-400",
-    bar: "#0ea5e9",
-  },
-];
 function Avatar({ name, index }) {
   const initials = (name ?? "?")
     .split(" ")
@@ -138,8 +139,6 @@ function Avatar({ name, index }) {
 export {
   AVATAR_COLORS,
   Avatar,
-  getFullYear,
-  getMonth,
   CustomTooltip,
   bestMonth,
   thisMonthEarnings,

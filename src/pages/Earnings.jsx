@@ -13,17 +13,13 @@ import {
   Cell,
 } from "recharts";
 import {
-  AVATAR_COLORS,
   Avatar,
-  getFullYear,
-  getMonth,
   CustomTooltip,
   bestMonth,
   thisMonthEarnings,
   buildCategoryData,
   buildMonthlyData,
   CATEGORY_COLORS,
-  MONTH_NAMES,
 } from "../helpers";
 
 // ── Main Page ──────────────────────────────────────────────────────────────────
