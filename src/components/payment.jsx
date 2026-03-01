@@ -5,6 +5,7 @@ import {
   ChevronLeft,
   Lock,
 } from "lucide-react";
+import { useState } from "react";
 
 // ── Reusable Input ─────────────────────────────────────────────────────────────
 function Field({ label, error, children }) {
