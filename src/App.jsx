@@ -38,6 +38,7 @@ export default function App() {
               <Route path="/services" element={<Services />} />
           <Route path="auth/login" element={<Login />} />
               <Route path="auth/register" element={<Register />} />
+              <Route path="/howitworks" element={<Howitworks />} />
             </Route>
 
             {/* Artisan Dashboard */}
