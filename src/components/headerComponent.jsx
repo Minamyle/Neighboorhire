@@ -60,7 +60,7 @@ export default function MainHeader() {
                   className="relative ml-4 group overflow-hidden px-6 py-2.5 rounded-full bg-blue-600 hover:bg-blue-700 text-white hover:text-white text-sm font-bold transition-all duration-300 active:scale-95 flex items-center gap-2"
                 >
                   {/* Button Shimmer Effect */}
-                  <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] transition-transform" />
+                  <div className="absolute inset-0 w-full h-full bg-linear-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] transition-transform" />
 
                   {/* Explicitly forced text-white to fix hover conflict */}
                   <span className="relative z-10 text-white group-hover:text-white">
