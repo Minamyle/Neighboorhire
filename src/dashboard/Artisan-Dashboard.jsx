@@ -56,7 +56,7 @@ export default function ArtisanDashboard() {
           />
         </header>
 
-        <div className="p-6 md:p-10 animate-enter flex-1">
+        <div className="p-6 md:p-10 animate-enter flex-1 overflow-y-auto">
           <Outlet />
         </div>
       </main>

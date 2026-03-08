@@ -53,7 +53,7 @@ export default function CustomerDashboard() {
           onLogout={() => console.log("Logout")}
           onToggleSidebar={() => setIsMobileMenuOpen(true)}
         />
-        <div className="p-6 md:p-10 animate-enter flex-1">
+        <div className="p-6 md:p-10 animate-enter flex-1 overflow-y-auto">
           <Outlet />
         </div>
       </main>

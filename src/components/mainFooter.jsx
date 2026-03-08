@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import {
   Facebook,
   Twitter,
@@ -9,6 +9,7 @@ import {
 
 export default function MainFooter() {
   const currentYear = new Date().getFullYear();
+  const navigate = useNavigate();
 
   return (
     <footer className="mt-20 border-t border-slate-200/50 dark:border-zinc-800/50 bg-white dark:bg-zinc-950 transition-colors duration-500">
@@ -44,6 +45,7 @@ export default function MainFooter() {
                     <a
                       href="#"
                       className="text-sm text-slate-500 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors flex items-center gap-2"
+                      onClick={() => navigate("/artisans")}
                     >
                       {item}
                     </a>

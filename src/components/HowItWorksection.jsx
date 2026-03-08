@@ -2,10 +2,10 @@ import React from "react";
 
 const HowItWorkSection = () => {
   return (
-    <div className="w-full bg-gray-50 px-6 md:px-12 lg:px-60 py-16">
+    <div className="w-full bg-gray-50 px-6 md:px-12 lg:px-24 py-16">
       {/* Header */}
       <div className="text-center mb-14">
-        <h1 className="text-3xl sm:text-4xl font-bold mb-3">How It Works</h1>
+        <h1 className="text-3xl sm:text-4xl  font-bold mb-3">How It Works</h1>
         <p className="text-gray-600">Getting help is as easy as 1-2-3</p>
       </div>
 
