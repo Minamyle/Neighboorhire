@@ -1,9 +1,9 @@
-import { createContext, useContext, useEffect, useState } from "react";
-import { DUMMY_JOBS } from "../config/dummy-jobs-data";
+import {createContext, useContext, useEffect, useState} from "react";
+import {DUMMY_JOBS} from "../config/dummy-jobs-data";
 
 const JobsContext = createContext();
 
-export function JobsProvider({ children }) {
+export function JobsProvider({children}) {
   const [jobs, setJobs] = useState(() => {
     const stored = localStorage.getItem("jobs");
     return stored ? JSON.parse(stored) : DUMMY_JOBS;
@@ -13,32 +13,52 @@ export function JobsProvider({ children }) {
     localStorage.setItem("jobs", JSON.stringify(jobs));
   }, [jobs]);
 
-  // --- NEW: Create Job Function ---
+  // Create Job
   const createJob = (newJob) => {
-    setJobs((prevJobs) => [newJob, ...prevJobs]); // Adds new job to the top of the list
+    setJobs((prevJobs) => [newJob, ...prevJobs]);
   };
 
+  // Update Status
   const updateJobStatus = (jobId, newStatus) => {
     setJobs((prevJobs) =>
       prevJobs.map((job) =>
-        job.id === jobId ? { ...job, status: newStatus } : job,
+        job.id === jobId ? {...job, status: newStatus} : job,
       ),
     );
   };
 
+  // Accept Job
   const acceptJob = (jobId, artisanId) => {
     setJobs((prevJobs) =>
       prevJobs.map((job) =>
         job.id === jobId
-          ? { ...job, artisanId: artisanId, status: "accepted" }
+          ? {...job, artisanId: artisanId, status: "accepted"}
           : job,
       ),
     );
   };
 
-  // Optional: Remove a job if a customer cancels
+  // Delete Job
   const deleteJob = (jobId) => {
     setJobs((prevJobs) => prevJobs.filter((job) => job.id !== jobId));
+  };
+
+  // ── NEW: Rate a completed job ──────────────────────────────────────────────
+  // Called from the customer side once a job is completed.
+  // Adds `rating` (number 1–5) and `review` (string) to the job record.
+  const rateJob = (jobId, {rating, review}) => {
+    setJobs((prevJobs) =>
+      prevJobs.map((job) =>
+        job.id === jobId
+          ? {
+              ...job,
+              rating, // e.g. 4.5
+              review: review ?? "", // optional text review
+              ratedAt: new Date().toISOString(), // timestamp of when rated
+            }
+          : job,
+      ),
+    );
   };
 
   return (
@@ -49,6 +69,7 @@ export function JobsProvider({ children }) {
         updateJobStatus,
         acceptJob,
         deleteJob,
+        rateJob, // ← exposed here
       }}
     >
       {children}

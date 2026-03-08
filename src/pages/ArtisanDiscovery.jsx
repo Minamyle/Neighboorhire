@@ -89,8 +89,7 @@ export default function ArtisanDiscovery() {
         {/* Hero Section */}
         <div className="mb-12">
           <h1 className="text-3xl md:text-5xl font-black text-slate-900 dark:text-white tracking-tight leading-tight mb-8">
-            Find Skilled Local <br className="hidden md:block" /> Artisans in
-            Nigeria
+            Find Skilled Local Artisans in Nigeria
           </h1>
           <ArtisanSearchBar />
         </div>
