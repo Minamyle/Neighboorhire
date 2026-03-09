@@ -1,6 +1,6 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { AuthProvider } from "./context/AuthContext";
-import { JobsProvider } from "./context/JobsContext";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {AuthProvider} from "./context/AuthContext";
+import {JobsProvider} from "./context/JobsContext";
 
 import IndexPageLayout from "./layouts/IndexPageLayout";
 import LandingPage from "./pages/LandingPage";
@@ -36,7 +36,7 @@ export default function App() {
               <Route index element={<LandingPage />} />
               <Route path="artisans" element={<ArtisanDiscovery />} />
               <Route path="/services" element={<Services />} />
-          <Route path="auth/login" element={<Login />} />
+              <Route path="auth/login" element={<Login />} />
               <Route path="auth/register" element={<Register />} />
               <Route path="/howitworks" element={<Howitworks />} />
             </Route>

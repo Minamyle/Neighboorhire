@@ -1,9 +1,9 @@
-import { BriefcaseBusiness, Clock, Wallet, TrendingUp } from "lucide-react";
+import {BriefcaseBusiness, Clock, Wallet, TrendingUp} from "lucide-react";
 import GlassTable from "../components/recentActivityTable";
 import StatCard from "../components/statCard";
-import { useAuth } from "../context/AuthContext";
-import { useJobs } from "../context/JobsContext";
-import { useEffect } from "react";
+import {useAuth} from "../context/AuthContext";
+import {useJobs} from "../context/JobsContext";
+import {useEffect} from "react";
 import {
   BarChart,
   Bar,
@@ -38,7 +38,7 @@ const MONTH_NAMES = [
  */
 function buildChartData(jobs) {
   const now = new Date();
-  const months = Array.from({ length: 6 }, (_, i) => {
+  const months = Array.from({length: 6}, (_, i) => {
     const d = new Date(now.getFullYear(), now.getMonth() - (5 - i), 1);
     return {
       year: d.getFullYear(),
@@ -47,7 +47,7 @@ function buildChartData(jobs) {
     };
   });
 
-  return months.map(({ year, month, label }) => {
+  return months.map(({year, month, label}) => {
     const monthJobs = jobs.filter((job) => {
       const d = new Date(job.createdAt);
       return d.getFullYear() === year && d.getMonth() === month;
@@ -66,7 +66,7 @@ function buildChartData(jobs) {
 
 // ── Custom Tooltip ─────────────────────────────────────────────────────────────
 
-const CustomTooltip = ({ active, payload, label }) => {
+const CustomTooltip = ({active, payload, label}) => {
   if (!active || !payload?.length) return null;
   return (
     <div className="rounded-xl border border-slate-200 dark:border-white/10 bg-white/90 dark:bg-zinc-900/90 backdrop-blur-xl px-4 py-3 shadow-lg text-sm">
@@ -74,7 +74,7 @@ const CustomTooltip = ({ active, payload, label }) => {
       {payload.map((entry) => (
         <p
           key={entry.name}
-          style={{ color: entry.color }}
+          style={{color: entry.color}}
           className="font-medium"
         >
           {entry.name}:{" "}
@@ -90,8 +90,8 @@ const CustomTooltip = ({ active, payload, label }) => {
 // ── Main Component ─────────────────────────────────────────────────────────────
 
 export default function ArtisanDashboardOverview() {
-  const { user, login } = useAuth();
-  const { jobs } = useJobs();
+  const {user, login} = useAuth();
+  const {jobs} = useJobs();
 
   useEffect(() => {
     login("art_001");
@@ -198,7 +198,7 @@ export default function ArtisanDashboardOverview() {
         <ResponsiveContainer width="100%" height={260}>
           <BarChart
             data={chartData}
-            margin={{ top: 4, right: 4, left: -10, bottom: 0 }}
+            margin={{top: 4, right: 4, left: -10, bottom: 0}}
             barCategoryGap="28%"
             barGap={4}
           >
@@ -209,12 +209,12 @@ export default function ArtisanDashboardOverview() {
             />
             <XAxis
               dataKey="month"
-              tick={{ fontSize: 12, fill: "currentColor", opacity: 0.5 }}
+              tick={{fontSize: 12, fill: "currentColor", opacity: 0.5}}
               axisLine={false}
               tickLine={false}
             />
             <YAxis
-              tick={{ fontSize: 11, fill: "currentColor", opacity: 0.45 }}
+              tick={{fontSize: 11, fill: "currentColor", opacity: 0.45}}
               axisLine={false}
               tickLine={false}
               width={48}
@@ -222,7 +222,7 @@ export default function ArtisanDashboardOverview() {
             />
             <Tooltip
               content={<CustomTooltip />}
-              cursor={{ fill: "rgba(148,163,184,0.08)", radius: 6 }}
+              cursor={{fill: "rgba(148,163,184,0.08)", radius: 6}}
             />
 
             {/* Earnings bar */}

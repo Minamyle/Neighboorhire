@@ -1,9 +1,9 @@
-import { createContext, useContext, useEffect, useState } from "react";
-import { DUMMY_JOBS } from "../config/dummy-jobs-data";
+import {createContext, useContext, useEffect, useState} from "react";
+import {DUMMY_JOBS} from "../config/dummy-jobs-data";
 
 const JobsContext = createContext();
 
-export function JobsProvider({ children }) {
+export function JobsProvider({children}) {
   const [jobs, setJobs] = useState(() => {
     const stored = localStorage.getItem("jobs");
     return stored ? JSON.parse(stored) : DUMMY_JOBS;
@@ -22,7 +22,7 @@ export function JobsProvider({ children }) {
   const updateJobStatus = (jobId, newStatus) => {
     setJobs((prevJobs) =>
       prevJobs.map((job) =>
-        job.id === jobId ? { ...job, status: newStatus } : job,
+        job.id === jobId ? {...job, status: newStatus} : job,
       ),
     );
   };
@@ -32,7 +32,7 @@ export function JobsProvider({ children }) {
     setJobs((prevJobs) =>
       prevJobs.map((job) =>
         job.id === jobId
-          ? { ...job, artisanId: artisanId, status: "accepted" }
+          ? {...job, artisanId: artisanId, status: "accepted"}
           : job,
       ),
     );
@@ -46,7 +46,7 @@ export function JobsProvider({ children }) {
   // ── NEW: Rate a completed job ──────────────────────────────────────────────
   // Called from the customer side once a job is completed.
   // Adds `rating` (number 1–5) and `review` (string) to the job record.
-  const rateJob = (jobId, { rating, review }) => {
+  const rateJob = (jobId, {rating, review}) => {
     setJobs((prevJobs) =>
       prevJobs.map((job) =>
         job.id === jobId

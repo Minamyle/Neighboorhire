@@ -9,18 +9,18 @@ import {
   StarHalf,
   MessageSquarePlus,
 } from "lucide-react";
-import { useAuth } from "../context/AuthContext";
-import { useJobs } from "../context/JobsContext";
+import {useAuth} from "../context/AuthContext";
+import {useJobs} from "../context/JobsContext";
 import StatCard from "../components/statCard";
-import { useEffect, useState } from "react";
+import {useEffect, useState} from "react";
 import StatusBadge from "../components/status-badge";
 import StarDisplay from "../components/star-display";
 import ReviewModal from "../components/review-modal";
 
 // ── Main Dashboard ─────────────────────────────────────────────────────────────
 export default function CustomerDashboardOverview() {
-  const { user, login } = useAuth();
-  const { jobs, rateJob } = useJobs();
+  const {user, login} = useAuth();
+  const {jobs, rateJob} = useJobs();
   const [reviewTarget, setReviewTarget] = useState(null);
 
   useEffect(() => login("cust_001"));
